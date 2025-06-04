@@ -72,11 +72,11 @@ O projeto segue a arquitetura MVC (Model-View-Controller) para uma melhor organi
     2. Crie o arquivo .env
         Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
 
-        POSTGRES_USER=postgres
-        POSTGRES_PASSWORD=sua_senha
-        POSTGRES_DB=livraria
-        POSTGRES_HOST=localhost
-        POSTGRES_PORT=5432
+        DB_HOST=localhost -> Se for rodar com docker, altere para db (nome do container)
+        DB_PORT=5432
+        DB_NAME=livraria
+        DB_USER=postgres
+        DB_PASSWORD=postgres
     
     🐳 Rodar com Docker (recomendado)
 
