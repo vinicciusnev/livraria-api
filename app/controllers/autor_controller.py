@@ -32,6 +32,10 @@ def get_autor(id: int, db: Session = Depends(get_db)):
 def patch_autor(id: int, data: schema.AutorUpdate, db: Session = Depends(get_db)):
     return autor_service.update(db, id, data)
 
+@router.put("/{id}", response_model=schema.AutorPut)
+def patch_autor(id: int, data: schema.AutorPut, db: Session = Depends(get_db)):
+    return autor_service.put(db, id, data)
+
 @router.delete("/{id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_autor(id: int, db: Session = Depends(get_db)):
     autor_service.delete(db, id)

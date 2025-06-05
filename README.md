@@ -109,7 +109,9 @@ O projeto segue a arquitetura MVC (Model-View-Controller) para uma melhor organi
         
         POST /prod/autores — Criar novo autor
         
-        PUT /prod/autores/{id} — Atualizar autor
+        PUT /prod/autores/{id} —  Atualização total
+
+        PATCH /prod/autores/{id} — Atualização parcial 
         
         DELETE /prod/autores/{id} — Remover autor
     
@@ -120,7 +122,9 @@ O projeto segue a arquitetura MVC (Model-View-Controller) para uma melhor organi
         
         POST /prod/livros — Criar novo livro
         
-        PUT /prod/livros/{id} — Atualizar livro
+        PUT /prod/livros/{id} —  Atualização total
+
+        PATCH /prod/autores/{id} — Atualização parcial 
         
         DELETE /prod/livros/{id} — Remover livro
 

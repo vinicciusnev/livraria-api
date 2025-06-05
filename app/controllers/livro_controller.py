@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from app.core.database import SessionLocal
+from app.schemas.livro import LivroOut, LivroCreate
 from app.services import livro_service
 from app.schemas import livro as schema
 
@@ -31,6 +32,11 @@ def get_livro(id: int, db: Session = Depends(get_db)):
 @router.patch("/{id}", response_model=schema.LivroOut)
 def patch_livro(id: int, data: schema.LivroUpdate, db: Session = Depends(get_db)):
     return livro_service.update(db, id, data)
+
+@router.put("/{id}", response_model=schema.LivroPut)
+def update_livro(id: int, data: schema.LivroPut, db: Session = Depends(get_db)):
+    return livro_service.put(db, id, data)
+
 
 @router.delete("/{id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_livro(id: int, db: Session = Depends(get_db)):

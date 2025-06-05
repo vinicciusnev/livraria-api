@@ -23,6 +23,14 @@ def update(db: Session, id: int, data: schema.LivroUpdate):
     db.refresh(obj)
     return obj
 
+def put(db: Session, id: int, data: schema.LivroPut):
+    obj = get(db, id)
+    for key, value in data.dict().items():
+        setattr(obj, key, value)
+    db.commit()
+    db.refresh(obj)
+    return obj
+
 def delete(db: Session, id: int):
     obj = get(db, id)
     db.delete(obj)

@@ -16,6 +16,9 @@ class AutorUpdate(BaseModel):
     nome: Optional[str] = None
     nacionalidade: Optional[str] = None
 
+class AutorPut(BaseModel):
+    nome: str
+    nacionalidade: str
 
 class AutorOut(AutorBase):
     id: int

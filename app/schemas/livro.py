@@ -18,6 +18,11 @@ class LivroUpdate(BaseModel):
     preco: Optional[Decimal] = None
     autor_id: Optional[int] = None
 
+class LivroPut(BaseModel):
+    titulo: str
+    ano: int
+    preco: Decimal
+
 class LivroOut(LivroBase):
     id: int
 
