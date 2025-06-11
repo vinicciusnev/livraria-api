@@ -13,7 +13,7 @@ CREATE TABLE livraria.livros (
     id SERIAL PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     ano INTEGER,
-    preco INTEGER,
+    preco NUMERIC,
     autor_id INTEGER,
     CONSTRAINT fk_autor FOREIGN KEY (autor_id) REFERENCES livraria.autores(id) ON DELETE SET NULL
 );
